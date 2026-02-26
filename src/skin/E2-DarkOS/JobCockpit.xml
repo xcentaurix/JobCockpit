@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<screen backgroundColor="transparent" flags="wfNoBorder" name="JobCockpit" position="fill">
+	<panel name="Screen_3"/>
+	<panel position="center,center" size="1416,700">
+		<widget itemCornerRadius="6" position="20,0" render="Listbox" scrollbarMode="showOnDemand" size="e-40,640" source="list">
+			<convert type="TemplatedMultiContent"> { "template": [ MultiContentEntryText(pos=(10,0),size=(1000,40),flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,font=0, text=0), MultiContentEntryText(pos=(10,40),size=(200,40),flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,font=0, text=1), MultiContentEntryProgress(pos=(250,50),size=(1000,20),percent=-2, borderWidth=1), MultiContentEntryText(pos=(1266,40),size=(100,40),flags=RT_HALIGN_RIGHT|RT_VALIGN_CENTER,font=0, text=3), ], "fonts": [gFont("Regular",28)], "itemHeight": 80 } </convert>
+		</widget>
+	</panel>
+</screen>

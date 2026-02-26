@@ -1,0 +1,5 @@
+Description: JobCockpit
+Maintainer: xcentaurix
+Package: enigma2-plugin-systemplugins-jobcockpit
+Version: 0.2.12
+Architecture: all
