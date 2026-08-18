@@ -1,1 +1,1 @@
-SUBDIRS = default Simple_Ten_Eighty E2-DarkOS
+SUBDIRS = default Simple_Ten_Eighty

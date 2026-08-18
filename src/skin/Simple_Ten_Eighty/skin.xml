@@ -16,7 +16,7 @@
 			}
 			</convert>
 		</widget>
-		<ePixmap pixmap="border/smallshadowline.png" position="0,e-60" size="e,3"/>
+		<ePixmap pixmap="border/smallshadowline.png" position="0,e-60" scale="scale" size="e,3"/>
 		<panel name="ButtonTemplate"/>
 	</screen>
 </skin>
