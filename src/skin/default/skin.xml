@@ -1,9 +1,21 @@
 <?xml version="1.0" ?>
 <skin>
-	<screen backgroundColor="#1a1a1a" flags="wfNoBorder" name="JobCockpit" position="center,center" resolution="1920,1080" size="1416,700">
-		<eLabel backgroundColor="#101010" position="0,0" size="e,55"/>
-		<widget font="Bold;28" position="10,10" render="Label" size="e-20,35" source="Title" transparent="1" valign="center" zPosition="1"/>
-		<eLabel backgroundColor="#404040" position="0,54" size="e,2"/>
+	<colors>
+		<color name="panelBG" value="#1a1a1a"/>
+		<color name="barBG" value="#101010"/>
+		<color name="separator" value="#404040"/>
+		<color name="keyRed" value="#e0331e"/>
+		<color name="keyGreen" value="#3c9f2a"/>
+		<color name="keyYellow" value="#e0c31e"/>
+		<color name="keyBlue" value="#1e4ab5"/>
+		<color name="progressBG" value="#282828"/>
+		<color name="secondBG" value="#202020"/>
+		<color name="sliderBG" value="#303030"/>
+	</colors>
+	<screen backgroundColor="panelBG" flags="wfNoBorder" name="JobCockpit" position="center,center" resolution="1920,1080" size="1416,700">
+		<eLabel backgroundColor="barBG" position="0,0" size="e,55"/>
+		<widget font="Bold;38" position="10,0" render="Label" size="e-20,55" source="Title" transparent="1" valign="center" zPosition="1"/>
+		<eLabel backgroundColor="separator" position="0,54" size="e,2"/>
 		<widget position="10,65" render="Listbox" scrollbarMode="showOnDemand" size="e-20,570" source="list">
 			<convert type="TemplatedMultiContent">
 			{
@@ -18,11 +30,13 @@
 			}
 			</convert>
 		</widget>
-		<eLabel backgroundColor="#404040" position="0,e-62" size="e,2"/>
-		<eLabel backgroundColor="#101010" position="0,e-60" size="e,60"/>
-		<widget font="Regular;20" foregroundColor="#e0331e" halign="center" name="key_red" position="0,e-48" size="e/4,38" transparent="1" zPosition="2"/>
-		<widget font="Regular;20" foregroundColor="#3c9f2a" halign="center" name="key_green" position="e/4,e-48" size="e/4,38" transparent="1" zPosition="2"/>
-		<widget font="Regular;20" foregroundColor="#e0c31e" halign="center" name="key_yellow" position="e/2,e-48" size="e/4,38" transparent="1" zPosition="2"/>
-		<widget font="Regular;20" foregroundColor="#1e4ab5" halign="center" name="key_blue" position="e*3/4,e-48" size="e/4,38" transparent="1" zPosition="2"/>
+		<eLabel backgroundColor="separator" position="0,e-56" size="e,2"/>
+		<eLabel backgroundColor="barBG" position="0,e-55" size="e,55"/>
+		<widget conditional="key_red" font="Regular;32" foregroundColor="keyRed" halign="center" name="key_red" position="0,652" size="309,38" transparent="1" valign="center" zPosition="2"/>
+		<widget conditional="key_green" font="Regular;32" foregroundColor="keyGreen" halign="center" name="key_green" position="309,652" size="309,38" transparent="1" valign="center" zPosition="2"/>
+		<widget conditional="key_yellow" font="Regular;32" foregroundColor="keyYellow" halign="center" name="key_yellow" position="618,652" size="309,38" transparent="1" valign="center" zPosition="2"/>
+		<widget conditional="key_blue" font="Regular;32" foregroundColor="keyBlue" halign="center" name="key_blue" position="927,652" size="309,38" transparent="1" valign="center" zPosition="2"/>
+		<widget conditional="key_menu" font="Regular;32" foregroundColor="white" halign="center" name="key_menu" position="1236,652" size="90,38" transparent="1" valign="center" zPosition="2"/>
+		<widget conditional="key_info" font="Regular;32" foregroundColor="white" halign="center" name="key_info" position="1326,652" size="90,38" transparent="1" valign="center" zPosition="2"/>
 	</screen>
 </skin>
