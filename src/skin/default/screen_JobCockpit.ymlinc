@@ -1,11 +1,10 @@
 screen:
-  backgroundColor: "panelBG"
-  flags: "wfNoBorder"
   name: "JobCockpit"
   position: "center,center"
-  resolution: "1920,1080"
   size: "1416,700"
   children:
+    - xmlinc:
+        file: "screenpart_globals.ymlinc"
     - xmlinc:
         file: "screenpart_TitleBar.ymlinc"
     - widget:
@@ -14,6 +13,7 @@ screen:
         scrollbarMode: "showOnDemand"
         size: "e-20,570"
         source: "list"
+        transparent: "1"
         children:
           - convert:
               type: "TemplatedMultiContent"
@@ -23,26 +23,27 @@ screen:
                   - "Regular;28"
                 fields:
                   - text:
-                      rect: [10, 0, 1000, 40]
+                      position: "10,0"
+                      size: "1000,40"
                       font: "Regular;28"
                       flags: RT_HALIGN_LEFT|RT_VALIGN_CENTER
                       value: 0
                   - text:
-                      rect: [10, 40, 200, 40]
+                      position: "10,40"
+                      size: "200,40"
                       font: "Regular;28"
                       flags: RT_HALIGN_LEFT|RT_VALIGN_CENTER
                       value: 1
                   - progress:
-                      rect: [250, 50, 1000, 20]
+                      position: "250,50"
+                      size: "1000,20"
                       value: -2
                       borderWidth: 1
                   - text:
-                      rect: [1266, 40, 100, 40]
+                      position: "1266,40"
+                      size: "100,40"
                       font: "Regular;28"
                       flags: RT_HALIGN_RIGHT|RT_VALIGN_CENTER
                       value: 3
     - xmlinc:
-        file: "screenpart_BottomBar.ymlinc"
-    - xmlinc:
-        file: "screenpart_ButtonBar.ymlinc"
-        position: "0,$screen_height-48"
+        file: "screenpart_Footer.ymlinc"

@@ -4,7 +4,7 @@
 
 from Plugins.Plugin import PluginDescriptor
 from .Debug import logger
-from .Version import VERSION
+from .Version import PLUGIN, VERSION
 from .JobCockpit import JobCockpit
 from .PluginUtils import WHERE_JOBCOCKPIT
 from . import _
@@ -12,7 +12,7 @@ from .JobSupervisor import JobSupervisor
 from .SkinUtils import loadPluginSkin
 
 
-loadPluginSkin()
+loadPluginSkin(PLUGIN)
 
 
 def main(session, plugin_id="", **__kwargs):
@@ -30,13 +30,14 @@ def autoStart(reason, **kwargs):
 
 
 def Plugins(**__kwargs):
-    return [
+    descriptors = [
         PluginDescriptor(
             where=[
                 PluginDescriptor.WHERE_AUTOSTART,
                 PluginDescriptor.WHERE_SESSIONSTART
             ],
-            fnc=autoStart
+            fnc=autoStart,
+            needsRestart=True
         ),
         PluginDescriptor(
             name="JobCockpit",
@@ -46,12 +47,25 @@ def Plugins(**__kwargs):
             ],
             icon="JobCockpit.png",
             description=_("Manage Jobs"),
-            fnc=main
+            fnc=main,
+            needsRestart=True
         ),
         PluginDescriptor(
             name=_("Jobs"),
             description=_("Manage Jobs"),
             where=WHERE_JOBCOCKPIT,
-            fnc=main
-        )
+            fnc=main,
+            needsRestart=True
+        ),
     ]
+    try:
+        descriptors += [
+            PluginDescriptor(
+                where=PluginDescriptor.WHERE_SKINCHANGE,
+                fnc=loadPluginSkin
+            )
+        ]
+    except Exception:
+        pass
+
+    return descriptors
