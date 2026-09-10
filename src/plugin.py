@@ -45,7 +45,7 @@ def Plugins(**__kwargs):
                 PluginDescriptor.WHERE_PLUGINMENU,
                 PluginDescriptor.WHERE_EXTENSIONSMENU
             ],
-            icon="JobCockpit.png",
+            icon="plugin.png",
             description=_("Manage Jobs"),
             fnc=main,
             needsRestart=True
